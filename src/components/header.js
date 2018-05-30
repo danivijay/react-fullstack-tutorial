@@ -1,19 +1,15 @@
-import React from 'react'
-import { SSL_OP_PKCS1_CHECK_1 } from 'constants';
+import React, { Component } from 'react'
 
-const user = {
-  name: 'dani',
-  lastname: 'vijay',
-  age: 24
+class Header extends Component {
+  render () {
+    return (
+      <header>
+        <div>Logo</div>
+        <input type="text"/>
+      </header>
+    )
+  }
 }
 
-const Header = () => {
-  return (
-    <div>
-      <div>Name: {user.name} {user.lastname}</div>
-      <div>Age: {user.age}</div>
-    </div>
-  )
-}
 
 export default Header
