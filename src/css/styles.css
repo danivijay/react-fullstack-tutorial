@@ -1,0 +1,15 @@
+body {
+  margin: 0;
+}
+
+header {
+  width: 100%;
+  background: blue;
+  text-align: center;
+}
+
+header .logo {
+  font-family: 'Poppins', sans-serif;
+  font-weight: bold;
+  color: #fff;
+}
