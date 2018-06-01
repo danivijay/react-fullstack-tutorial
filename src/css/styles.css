@@ -12,4 +12,11 @@ header .logo {
   font-family: 'Poppins', sans-serif;
   font-weight: bold;
   color: #fff;
+  font-size: 2em;
+}
+
+header input {
+  padding: 10px;
+  height: 30px;
+  margin: 25px; 
 }
