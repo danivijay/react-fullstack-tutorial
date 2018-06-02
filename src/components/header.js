@@ -5,12 +5,15 @@ import '../css/styles.css'
 class Header extends Component {
 
   state = {
-    keywords: ''
+    keywords: '',
+    active: false
   }
 
   onInputChange = (e) => {
-    // Todo
+    const keywords = e.target.value
+    const val = keywords ? true : false 
     this.setState ({
+      active: val,
       keywords: e.target.value
     })
   }
@@ -18,16 +21,8 @@ class Header extends Component {
   
 
   render () {
-    const style = {
-      background: 'red'
-    }
-    if (this.state.keywords !== '' ){
-      style.background = 'blue'
-    } else {
-      style.background = 'red'
-    }
     return (
-      <header style={style}>
+      <header style={{background: `${this.state.active ? 'blue' : 'red'}`}}>
         <div className="logo">Logo</div>
         <input 
           type="text"
