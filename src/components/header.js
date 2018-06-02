@@ -5,15 +5,11 @@ import '../css/styles.css'
 class Header extends Component {
 
   state = {
-    keywords: '',
-    active: 'active'
+    keywords: ''
   }
 
   onInputChange = (e) => {
-    const keywords = e.target.value
-    const val = keywords ? 'active' : 'non-active' 
     this.setState ({
-      active: val,
       keywords: e.target.value
     })
   }
@@ -22,7 +18,7 @@ class Header extends Component {
 
   render () {
     return (
-      <header className={this.state.active}>
+      <header>
         <div className="logo">Logo</div>
         <input 
           type="text"

@@ -4,6 +4,7 @@ body {
 
 header {
   width: 100%;
+  background: blue;
   text-align: center;
 }
 
@@ -23,10 +24,3 @@ header input {
   min-width: 300px;
 }
 
-.active {
-  background: red
-}
-
-.non-active {
-  background: blue
-}
