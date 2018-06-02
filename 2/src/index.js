@@ -1,6 +1,6 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
-import { HashRouter, Route, Link } from 'react-router-dom'
+import { HashRouter, Route, NavLink, Switch } from 'react-router-dom'
 
 import Home from './components/Home'
 import Posts from './components/Posts'
@@ -12,19 +12,24 @@ const App = () => {
     <HashRouter>
     <div>
       <header>
-        <Link to="/">Home</Link>&nbsp;
-        <Link to="/posts">Posts</Link>&nbsp;
-        <Link to={{
+        <NavLink to="/">Home</NavLink>&nbsp;
+        <NavLink 
+          to="/posts"
+          activeStyle={{color: 'red'}}
+          >Posts</NavLink>&nbsp;
+        <NavLink to={{
           pathname: '/profile',
           hash: '#dani',
           search: '?param=1'
-        }}>Profile</Link>&nbsp;
+        }}>Profile</NavLink>&nbsp;
         <hr/>
       </header>
-      <Route path="/" exact component={Home} />
-      <Route path="/posts" component={Posts} />
-      <Route path="/posts/:id/:user" component={PostsItem} />
-      <Route path="/profile" component={Profile} />
+      <Switch>
+        <Route path="/posts/:id/:user" component={PostsItem} />
+        <Route path="/posts" component={Posts} />
+        <Route path="/profile" component={Profile} />
+        <Route path="/" exact component={Home} />
+      </Switch>
     </div>
     </HashRouter>
   )
