@@ -1,8 +1,11 @@
 import React from 'react'
 
-const Posts = () => {
+const Posts = (props) => {
+  console.log(props.match)
   return (
-    <h2>Posts</h2>
+    <div>
+      <h2>Posts</h2>
+    </div>
   )
 }
 
