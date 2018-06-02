@@ -4,7 +4,6 @@ body {
 
 header {
   width: 100%;
-  background: blue;
   text-align: center;
 }
 
@@ -22,4 +21,12 @@ header input {
   margin: 25px;
   width: 50%;
   min-width: 300px;
+}
+
+.active {
+  background: red
+}
+
+.non-active {
+  background: blue
 }

@@ -6,12 +6,12 @@ class Header extends Component {
 
   state = {
     keywords: '',
-    active: false
+    active: 'active'
   }
 
   onInputChange = (e) => {
     const keywords = e.target.value
-    const val = keywords ? true : false 
+    const val = keywords ? 'active' : 'non-active' 
     this.setState ({
       active: val,
       keywords: e.target.value
@@ -22,7 +22,7 @@ class Header extends Component {
 
   render () {
     return (
-      <header style={{background: `${this.state.active ? 'blue' : 'red'}`}}>
+      <header className={this.state.active}>
         <div className="logo">Logo</div>
         <input 
           type="text"
