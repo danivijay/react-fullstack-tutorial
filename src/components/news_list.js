@@ -12,7 +12,10 @@ const NewsList = (props) => {
   })
 
   return (
-    <div>{ news }</div>
+    <div>
+      <div>{ props.children }</div>
+      <div>{ news }</div>
+    </div>
   )
 }
 

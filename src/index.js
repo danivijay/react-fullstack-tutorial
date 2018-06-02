@@ -11,7 +11,11 @@ class App extends React.Component {
     return (
       <div>
         <Header />
-        <NewsList news={JSON} />
+        <NewsList news={JSON}>
+          <div>
+            <h3>The News are:</h3>
+          </div>
+        </NewsList>
       </div>
     )
   }
