@@ -35,7 +35,7 @@ class App extends React.Component {
         <Header getKeywords={this.getKeyword} />
         <NewsList news={keywords ? filteredNews : news}>
           <div>
-            <h3>The News are:</h3>
+            <h3>Feed:</h3>
           </div>
         </NewsList>
       </div>
