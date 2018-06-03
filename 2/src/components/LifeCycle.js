@@ -8,6 +8,11 @@ class LifeCycle extends React.Component {
   componentDidMount () {
     console.log('did')
   }
+
+  componentWillUnmount () {
+    console.log('Unmount')
+  }
+
   render () {
     return (
       <div>
