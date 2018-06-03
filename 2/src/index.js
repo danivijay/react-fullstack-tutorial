@@ -1,15 +1,16 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
-import { HashRouter, Route, NavLink, Switch } from 'react-router-dom'
+import { BrowserRouter, Route, NavLink, Switch } from 'react-router-dom'
 
 import Home from './components/Home'
 import Posts from './components/Posts'
 import Profile from './components/Profile'
 import PostsItem from './components/PostsItem'
+import LifeCycle from './components/LifeCycle'
 
 const App = () => {
   return (
-    <HashRouter>
+    <BrowserRouter>
     <div>
       <header>
         <NavLink to="/">Home</NavLink>&nbsp;
@@ -22,16 +23,19 @@ const App = () => {
           hash: '#dani',
           search: '?param=1'
         }}>Profile</NavLink>&nbsp;
+        <NavLink to="/lifecycle">LifeCycle</NavLink>&nbsp;
         <hr/>
       </header>
       <Switch>
         <Route path="/posts/:id/:user" component={PostsItem} />
         <Route path="/posts" component={Posts} />
         <Route path="/profile" component={Profile} />
+        <Route path="/lifecycle" component={LifeCycle} />
         <Route path="/" exact component={Home} />
+        <Route render={() => <h2>Oops! 404</h2> } />
       </Switch>
     </div>
-    </HashRouter>
+    </BrowserRouter>
   )
 }
 
