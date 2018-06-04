@@ -5,11 +5,7 @@ import { createStore, applyMiddleware } from 'redux'
 
 import reducers from './reducers'
 
-const App = () => {
-  return (
-    <div>Hello</div>
-  )
-}
+import App from './app'
 
 const createStoreWithMiddleware = applyMiddleware()(createStore)
 
