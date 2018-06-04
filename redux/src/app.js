@@ -1,11 +1,13 @@
 import React from 'react'
 import { connect } from 'react-redux'
-import { movielist } from './actions'
+import { movieslist, directorslist } from './actions'
+import { bindActionCreators } from 'redux'
 
 class App extends React.Component{
 
   componentWillMount () {
-    this.props.getMovies()
+    this.props.movieslist()
+    this.props.directorslist()
   }
 
   renderMovies = (movies) => (
@@ -18,6 +20,7 @@ class App extends React.Component{
   )
 
   render () {
+    console.log(this.props)
     return (
       <div>{ this.renderMovies(this.props.data.movies)}</div>
     )
@@ -31,11 +34,9 @@ const mapStateToProps = (state) => {
 }
 
 const mapDispatchToProps = (dispatch) => {
-  return {
-    getMovies: ()=> {
-      dispatch(movielist())
-    } 
-  }
+  return bindActionCreators({
+    movieslist, directorslist
+  }, dispatch)
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(App)
