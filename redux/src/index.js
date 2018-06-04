@@ -5,7 +5,7 @@ import { createStore, applyMiddleware } from 'redux'
 
 import reducers from './reducers'
 
-import App from './app'
+import App from './containers/app'
 
 const createStoreWithMiddleware = applyMiddleware()(createStore)
 

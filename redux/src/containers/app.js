@@ -1,7 +1,8 @@
 import React from 'react'
 import { connect } from 'react-redux'
-import { movieslist, directorslist } from './actions'
+import { movieslist, directorslist } from '../actions'
 import { bindActionCreators } from 'redux'
+import MovieList from '../components/MovieList'
 
 class App extends React.Component{
 
@@ -10,21 +11,12 @@ class App extends React.Component{
     this.props.directorslist()
   }
 
-  renderMovies = (movies) => (
-    movies?
-      movies.map(item => (
-          <div key={ item.name }>
-            { item.name }
-          </div>
-      )): null
-  )
-
   render () {
-    console.log(this.props)
     return (
-      <div>{ this.renderMovies(this.props.data.movies)}</div>
+      <MovieList {...this.state.movies}/>
     )
   }
+  
 }
 
 const mapStateToProps = (state) => {
